@@ -3,26 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Academia de Trolls</title>
+        <title>Academia</title>
         <link rel="stylesheet" href="./style.css">
         <link rel="icon" href="">
     </head>
 
     <body>
-        <div>
-            <video autoplay>
-                <source src="./Media/infoacad.mp4" type="video/mp4" autoplay muted>
-                Seu navegador não suporta a tag de vídeo.
-              </video>
-              
-              <script>
-                setInterval(function() {
-                  var video = document.querySelector('video');
-                  video.currentTime = 0;
-                  video.play();
-                }, 15000);
-              </script>
-        </div>
+        <video autoplay muted>
+            <source src="./Media/infoacad.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+          
+          <script>
+            var video = document.querySelector('video');
+            video.addEventListener('loadedmetadata', function() {
+              setInterval(function() {
+                video.currentTime = 0;
+                video.play();
+              }, 90000);
+            });
+          </script>
     </body>
 
 </html>
